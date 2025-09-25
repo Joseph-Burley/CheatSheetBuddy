@@ -1,1 +1,3 @@
 *.FCBak #FreeCAD backup files
+
+**/secrets.h #the secrets file used to store the SSID and password for network connections
