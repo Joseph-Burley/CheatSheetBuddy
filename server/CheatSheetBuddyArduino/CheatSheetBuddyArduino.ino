@@ -1,10 +1,12 @@
+#include "secrets.h"
 #include <SPI.h>
 #include <WiFi101.h>
 #include <aWOT.h>
 #include <SD.h>
+#include <FreeRTOS.h>
 
-char ssid[] = NETWORK
-char pass[] = PASS
+char ssid[] = NETWORK;
+char pass[] = PASS;
 
 WiFiServer server(80);
 Application app;
