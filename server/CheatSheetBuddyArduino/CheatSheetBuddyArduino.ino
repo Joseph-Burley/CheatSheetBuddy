@@ -6,6 +6,7 @@
 #include "serverManager.h"
 #include "neopixelTest.h"
 #include <Adafruit_NeoPixel.h>
+#include "display.h"
 
 void taskBlink(void *pvParameters) {
   //TickType_t delayTime = *((TickType_t *)pvParameters);
@@ -24,6 +25,12 @@ void setup() {
   Serial.begin(115200);
 
   delay(5000);
+
+  if (startDisplay()) {
+    runDisplay();
+  } else {
+    Serial.println("The display did not start");
+  }
 
   char ssid[] = NETWORK;
   char pass[] = PASS;

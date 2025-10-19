@@ -32,8 +32,9 @@ void testPost(Request &req, Response &res) {
 
 void store(Request &req, Response &res) {
   Serial.println("processing a store");
-  bool success = req.query("data", data, 100);
-  if (success) {
+  bool readSuccess = req.query("data", data, 100);
+  bool displaySuccess = updateDisplay(&data[0]);
+  if (readSuccess && displaySuccess) {
     res.status(200);
     res.set("Content-Type", "text/html");
     res.set("Connection", "close");
@@ -46,7 +47,7 @@ void store(Request &req, Response &res) {
     res.set("Content-Type", "text/html");
     res.set("Connection", "close");
     res.println("<html>");
-    res.println("<p>Could not store data</p>");
+    res.println("<p>Either could not store data or could not display</p>");
     res.println("</html>");
     res.end();
   }
