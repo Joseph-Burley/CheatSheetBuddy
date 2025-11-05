@@ -10,6 +10,16 @@ Application app;
 
 char data[100] = {0};
 
+void endpointNotImplemented(Request &rep, Response &res){
+  res.status(200);
+  res.set("Content-Type", "text/html");
+  res.set("Connection", "close");
+  res.println("<html>");
+  res.println("<p>This endpoint has not yet been implemented</p>");
+  res.println("</html>");
+  res.end();
+}
+
 void index(Request &req, Response &res) {
   Serial.println("processing request");
   res.status(200);
@@ -70,9 +80,15 @@ void TaskServer(void *pvParameters) {
   //data = {0};
 
   app.get("/", &index);
-  app.get("/store", &store);
-  app.get("/retrieve", &retrieve);
-  app.post("/testPost", &testPost);
+  app.put("/createsheet", &endpointNotImplemented);
+  app.get("/getsheet", &endpointNotImplemented);
+  app.put("/updatesheet", &endpointNotImplemented);
+  app.put("/updatecontent", &endpointNotImplemented);
+  app.del("/removesheet", &endpointNotImplemented);
+  app.put("/switch", &endpointNotImplemented);
+  app.put("/editsetting", &endpointNotImplemented);
+  app.get("/settings", &endpointNotImplemented);
+
   server.begin();
   Serial.println("server is set up");
   int num_loops = 0;

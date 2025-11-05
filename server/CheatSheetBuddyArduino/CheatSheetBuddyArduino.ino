@@ -4,8 +4,6 @@
 //#include <aWOT.h>
 #include <FreeRTOS.h>
 #include "serverManager.h"
-#include "neopixelTest.h"
-#include <Adafruit_NeoPixel.h>
 #include "display.h"
 
 void taskBlink(void *pvParameters) {
