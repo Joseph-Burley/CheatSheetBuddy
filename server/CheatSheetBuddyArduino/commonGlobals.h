@@ -1,7 +1,7 @@
 #pragma once
 
 namespace Common {
-  inline constexpr string SETTING_FILE = "settings.txt";
-  inline constexpr string INDEX_FILE = "index.txt";
-  inline constexpr string NETWORK_FILE = "network.txt";
+  inline constexpr char SETTING_FILE[] = "/settings.txt";
+  inline constexpr char INDEX_FILE[] = "/index.txt";
+  inline constexpr char NETWORK_FILE[] = "/network.txt";
 }

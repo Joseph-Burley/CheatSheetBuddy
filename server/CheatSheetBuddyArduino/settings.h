@@ -1,12 +1,14 @@
 struct {
-  int brightness;
-  int switching_time;
+  int brightness = 255;
+  int switching_time = 1000;
 } settings;
 
 enum settingResult {
   OK,
   NO_CARD,
   WRITE_FAILED,
+  BAD_SPI,
+  BAD_FORMAT,
 };
 
 //reads the settings file from the SD card and saves the contents to the struct

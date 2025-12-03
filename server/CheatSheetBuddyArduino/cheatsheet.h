@@ -1,16 +1,20 @@
+#include <string>
 #include <vector>
+#include <ArduinoJson.h>
 struct metadata {
-  string filename;
-  string[] shortnames;
+  String filename;
+  std::vector<String> shortnames;
 };
 
 enum indexResult {
   OK,
   NO_CARD,
   WRITE_FAILED,
+  BAD_SPI,
+  BAD_FORMAT,
 };
 
-std::vector<metadata> index;
+std::vector<metadata> sheetIndex;
 
 //loads the index from the SD card and saves it into the index vector
 indexResult loadIndex();
