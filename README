@@ -1,0 +1,8 @@
+# Cheat Sheet Buddy#
+A second screen to display keyboard shortcuts based on what application you're using. The setup consists of a server which controls the display, and a client that watches desktop events and notifies the server.
+
+## Features ##
+
+## Installation ##
+
+## Building From Source ##
